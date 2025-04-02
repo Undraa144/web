@@ -1,0 +1,86 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location Sharing App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Authentication Screen (shown by default) -->
+        <div id="auth-screen" class="screen">
+            <div class="auth-container">
+                <div class="tabs">
+                    <button class="tab active" data-tab="signup">Бүртгүүлэх</button>
+                    <button class="tab" data-tab="login">Нэвтрэх</button>
+                </div>
+                
+                <div id="signup-form" class="auth-form active">
+                    <h2>Бүртгүүлэх</h2>
+                    <input type="text" id="signup-name" placeholder="Нэр">
+                    <input type="email" id="signup-email" placeholder="Цахим шуудан">
+                    <input type="password" id="signup-password" placeholder="Нууц үг">
+                    <input type="text" id="signup-image" placeholder="Зураг URL">
+                    <button id="signup-btn">Бүртгүүлэх</button>
+                </div>
+                
+                <div id="login-form" class="auth-form">
+                    <h2>Нэвтрэх</h2>
+                    <input type="email" id="login-email" placeholder="Цахим шуудан">
+                    <input type="password" id="login-password" placeholder="Нууц үг">
+                    <button id="login-btn">Нэвтрэх</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Home Screen (hidden by default) -->
+        <div id="home-screen" class="screen hidden">
+            <header>
+                <h1>Газрын мэдээлэл</h1>
+                <div class="user-info">
+                    <span id="current-user"></span>
+                    <button id="logout-btn">Гарах</button>
+                </div>
+            </header>
+            
+            <nav>
+                <button class="nav-btn active" data-screen="user-list">Хэрэглэгчийн жагсаалт</button>
+                <button class="nav-btn" data-screen="my-places">Миний газрууд</button>
+                <button class="nav-btn" data-screen="add-place">Газар нэмэх</button>
+            </nav>
+            
+            <!-- User List Screen -->
+            <div id="user-list-screen" class="content-screen active">
+                <h2>Хэрэглэгчийн жагсаалт</h2>
+                <div id="users-container" class="users-grid"></div>
+            </div>
+            
+            <!-- My Places Screen -->
+            <div id="my-places-screen" class="content-screen">
+                <h2 id="places-screen-title">Миний газрууд</h2>
+                <div id="places-container" class="places-grid"></div>
+            </div>
+            
+            <!-- Add Place Screen -->
+            <div id="add-place-screen" class="content-screen">
+                <h2>Газар нэмэх</h2>
+                <form id="add-place-form">
+                    <input type="text" id="place-title" placeholder="Гарчиг" required>
+                    <textarea id="place-description" placeholder="Тайлбар"></textarea>
+                    <input type="text" id="place-address" placeholder="Хаяг" required>
+                    <input type="text" id="place-location" placeholder="Байршил (lat,lng)" required>
+                    <input type="text" id="place-image" placeholder="Зураг URL">
+                    <button type="submit">Хадгалах</button>
+                </form>
+            </div>
+            
+            <!-- Place Detail Screen (hidden by default) -->
+            <div id="place-detail-screen" class="content-screen hidden">
+                <button id="back-btn">← Буцах</button>
+                <div id="place-detail-container"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
