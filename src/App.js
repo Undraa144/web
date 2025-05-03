@@ -67,7 +67,7 @@ function App() {
                 return (
                     <div>
                         <section className="hero">
-                        <div className="hero" style={{ backgroundImage: "url('/about.jpeg')" }}
+                        <div className="hero" style={{ backgroundImage: "url('\hero.jpeg')" }}
                         >  
         
       </div>
